@@ -24,13 +24,12 @@
 
 <body>
   <nav>
-    <a href="#profile">Profile</a> |
-    <a href="#interests">General interests</a> |
-    <a href="#research">Research directions</a> |
-    <a href="#beliefs">What we believe:</a> |
-    <a href="#what_we_do">What we do:</a> |
+    <a href="#researchinterests">Research interests</a> |
+    <a href="#beliefs">Beliefs</a> |
     <a href="#news">News</a> |
-    <a href="#publications">Selected publications</a>
+    <a href="#publications">Publications</a>|
+    <a href="#team">Team</a>|
+    
   </nav>
 
 
@@ -68,28 +67,39 @@
           </tr>
         </table>
         
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>General interests</heading>
-              <p>
-                My research interests include cognitively inspired machine learning and machine learning for science. 
-              </p>
-            </td>
-          </tr>
-        </table>
-        
+
+        <section id="researchinterests">
+       
          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
           <tr>
             <td width="100%" valign="middle">
-              <heading>Research directions</heading>
+              <heading>Research interests</heading>
               <p>
-                
-               1) Bring the ability to "imagine" and "dream" to AI and 2) use them for scientific discovery in biomedical sciences
+              Our research focuses on developling congnitively inspired machine learning methods and use them to solve problems in biomedical sciences. 
+              More specifcially, we have the following aims:
               </p>
+              <p>
+               1) Bring conciousness to AI and enable machine to "reason" and "imagine" 
+              </p>
+              <p>
+              2) Employ conscious AI to analyze and comprehend the growing volume and diversity of biomedical data, with the aim of doubling the average life expectancy worldwide
+              </p>
+
+              <p>
+              3) Utilize conscious AI to minimize the risk of catastrophic events triggered by artificial intelligence, by enhancing the alignment and interaction between humans and AI systems
+              </p>
+
+              <p>
+                4) Develop and deploy practical AI tools for scientific applications, aimed at transforming Singapore into a leading technology export hub in Asia.
+              </p>
+  
+
             </td>
           </tr>
-        </table>       
+        </table> 
+        </section> 
+
+      <section id="beliefs"></section>     
          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
           <tr>
             <td width="100%" valign="middle">
@@ -108,34 +118,37 @@
             </td>
           </tr>
         </table>
-        
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-          <tr>
-            <td width="100%" valign="middle">
-              <heading>What we do:</heading>
-              <p>
-                Use sciences and technologies to push the limits of Homos Sapiens and help all who suffer
-              </p>
-            </td>
-          </tr>
-        </table>
+      </section>
         
         
         
 
-
+        <section id="news">
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
           <tr>
             <td width="100%" valign="middle">
               <heading>News</heading>
             </td>
           </tr>
+
+          <tr onmouseout="porlight_stop()" onmouseover="porlight_start()">
+            <td valign="middle" width="100%">
+              <ul>
+                <li>
+                  <strong>[July. 2023]</strong> 
+                  Present our   <a href="https://proceedings.mlr.press/v202/liu23r/liu23r.pdf"> GFlowOut work </a>  at ICML 2023 in Hawaii
+                </li>
+              </ul>
+            </td>
+          </tr>
+
+
           <tr onmouseout="porlight_stop()" onmouseover="porlight_start()">
             <td valign="middle" width="100%">
               <ul>
                 <li>
                   <strong>[June. 2023]</strong> 
-                  Preprint our 2-year effort on  <a href="https://arxiv.org/abs/2305.17375"> attention schema </a>  and submitted to Theory of Mind workshop at ICML 2023
+                  Preprint our 2-year effort on  <a href="https://arxiv.org/abs/2305.17375"> attention schema </a>  
                 </li>
               </ul>
             </td>
@@ -153,6 +166,10 @@
           </tr>
         </table>
 
+      </section>
+
+
+      <section id="publications">
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
           <tr>
             <td width="100%" valign="middle">
@@ -229,6 +246,20 @@
 
           <tr onmouseout="porlight_stop()" onmouseover="porlight_start()">
             <td valign="middle" width="100%">
+              <a href="https://arxiv.org/abs/2209.13518">
+                <papertitle>Graph-Based Active Machine Learning Method for Diverse and Novel Antimicrobial Peptides Generation and Selection</papertitle>
+              </a>
+              <br>
+              Bonaventure F. P. Dossou, <strong>Dianbo Liu</strong>, Xu Ji, Moksh Jain, Almer M. van der Sloot, Roger Palou, Michael Tyers, Yoshua Bengio
+              <br>
+              <em>Preprinted</em>
+              <br>
+            </td>
+          </tr>
+
+
+          <tr onmouseout="porlight_stop()" onmouseover="porlight_start()">
+            <td valign="middle" width="100%">
               <a href="https://papers.nips.cc/paper/2021/hash/10907813b97e249163587e6246612e21-Abstract.html">
                 <papertitle>Discrete- Valued Neural Communication </papertitle>
               </a>
@@ -253,6 +284,9 @@
               <br>
             </td>
           </tr>
+
+
+
 
 
           <tr onmouseout="porlight_stop()" onmouseover="porlight_start()">
@@ -310,6 +344,7 @@
               <br>
             </td>
           </tr>
+        </section>
 
 
 
