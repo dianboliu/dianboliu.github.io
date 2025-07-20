@@ -56,13 +56,7 @@
 
 <head>
     <style>
-        .image-container {
-        display: flex;
-        justify-content: center; /* Horizontally center the content */
-        align-items: center;     /* Vertically center the content */
-        flex-wrap: wrap;         /* Allow wrapping if there's not enough horizontal space */
-        gap: 10px;               /* Space between images */
-        }
+        /* 原有的image-container样式已被新的样式覆盖 */
     </style>
 </head>
 
@@ -94,6 +88,227 @@
 
         .low-res {
             filter: blur(0px);
+        }
+
+        /* 团队成员卡片悬停效果 */
+        .team-member-card {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            margin: 1%;
+            transition: transform 0.3s ease;
+            height: 280px; /* 统一卡片高度 */
+            vertical-align: top;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 普通团队成员卡片（非悬停效果） */
+        .team-member-simple {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            margin: 1%;
+            height: 280px; /* 统一卡片高度 */
+            vertical-align: top;
+        }
+
+        /* 图片容器 */
+        .team-member-card img,
+        .team-member-simple img {
+            margin-bottom: 10px;
+        }
+
+        /* 文本容器 */
+        .team-member-card p,
+        .team-member-simple p {
+            margin: 0;
+            padding: 0 5px;
+            font-size: 14px;
+            line-height: 1.4;
+            height: 80px; /* 固定文本区域高度 */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        /* 容器布局优化 */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* 确保卡片在容器中正确对齐 */
+        .team-member-card,
+        .team-member-simple {
+            flex: 0 0 calc(30% - 2%);
+            margin: 1%;
+            box-sizing: border-box;
+        }
+
+        /* 第一行的特殊布局 - 两列 */
+        .team-member-card:first-child,
+        .team-member-simple:first-child {
+            flex: 0 0 calc(45% - 2%);
+        }
+
+        .team-member-card:nth-child(2),
+        .team-member-simple:nth-child(2) {
+            flex: 0 0 calc(45% - 2%);
+        }
+
+        /* 从第三行开始恢复三列布局 */
+        .team-member-card:nth-child(3),
+        .team-member-simple:nth-child(3) {
+            flex: 0 0 calc(30% - 2%);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .team-member-card,
+            .team-member-simple {
+                flex: 0 0 calc(50% - 2%);
+                height: 260px;
+            }
+            
+            /* 平板端第一行也保持两列 */
+            .team-member-card:first-child,
+            .team-member-simple:first-child {
+                flex: 0 0 calc(45% - 2%);
+            }
+
+            .team-member-card:nth-child(2),
+            .team-member-simple:nth-child(2) {
+                flex: 0 0 calc(45% - 2%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member-card,
+            .team-member-simple {
+                flex: 0 0 calc(100% - 2%);
+                height: 240px;
+            }
+            
+            /* 手机端所有卡片都是单列 */
+            .team-member-card:first-child,
+            .team-member-simple:first-child,
+            .team-member-card:nth-child(2),
+            .team-member-simple:nth-child(2) {
+                flex: 0 0 calc(100% - 2%);
+            }
+        }
+
+        /* 链接指示图标 */
+        .link-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(52, 152, 219, 0.9);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* 为不同角色设置不同颜色的指示器 */
+        .phd-candidate .link-indicator {
+            background: rgba(52, 152, 219, 0.9);
+        }
+
+        .postdoc .link-indicator {
+            background: rgba(155, 89, 182, 0.9);
+        }
+
+        .intern .link-indicator {
+            background: rgba(46, 204, 113, 0.9);
+        }
+
+        .visiting .link-indicator {
+            background: rgba(230, 126, 34, 0.9);
+        }
+
+        .team-member-links {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+
+        .team-member-card:hover .team-member-links {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .team-member-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 8px 0;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .team-member-links a:hover {
+            color: #f39c12;
+        }
+
+        .team-member-links i {
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        /* 为不同角色添加不同的悬停效果 */
+        .phd-candidate .team-member-links {
+            background: rgba(52, 152, 219, 0.9);
+        }
+
+        .postdoc .team-member-links {
+            background: rgba(155, 89, 182, 0.9);
+        }
+
+        .intern .team-member-links {
+            background: rgba(46, 204, 113, 0.9);
+        }
+
+        .visiting .team-member-links {
+            background: rgba(230, 126, 34, 0.9);
         }
     </style>
 </head>
@@ -395,160 +610,322 @@
                                                 <div class="image-container panel-body">
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/abhijeet_sinha.jpeg" class="circular-image low-res">
                                                         <p>Abhijeet Sinha (PhD candidate. Post-training of LLM, RL. Previous: IIT, Madras, India)</p>
-                                                    </div>
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Abhishek_Das.jpg" class="circular-image low-res">
-                                                        <p>Abihshek Das(Intern. Diffusion. From IIT, Guwahati, India)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=7zYrrLIAAAAJ&view_op=list_works&gmla=AH8HC4ycKGp6k_2EzuDvCO1jZOXNW0RvM-uZl5pbh5IXXmeUU-D0-cfjWwE5zR_7NAIRLG76JCfBsiINbyCjVbKQ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://abhijeetsinha.com/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Abhishek_Das.jpg" class="circular-image low-res">
+                                                         <p>Abihshek Das(Intern. Diffusion. From IIT, Guwahati, India)</p>
+                                                     </div>
+
+                                                    <div class="team-member-card visiting">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/ArashLagzian.jpg" class="circular-image low-res">
                                                         <p>Arash Lagzian(Visiting Scholar. Creativity and Optimization. From Sharif U. of Tech,Iran)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=NhdEa3IAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://arashlagzian.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
-
-                                                    
-
+                     
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Ayush_Gulati.jpg" class="circular-image low-res">
-                                                        <p>Ayush Gulati(Intern. Memory. From IIT Jodhpur,India)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Ayush_Gulati.jpg" class="circular-image low-res">
+                                                         <p>Ayush Gulati(Intern. Memory. From IIT Jodhpur,India)</p>
+                                                     </div>
 
-                                                   
-                           
-
-
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Dianbo_Liu_.jpeg" class="circular-image low-res">
-                                                        <p>Dianbo Liu (Principal investigator)</p>
-                                                    </div>
-
-
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Dianbo_Liu_.jpeg" class="circular-image low-res">
+                                                         <p>Dianbo Liu (Principal investigator)</p>
+                                                     </div>
                                                  
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Hengtong_Li.jpg" class="circular-image low-res">
-                                                        <p>Hengtong Li (PhD candidate. Co-adv. with Ching-Yu Cheng. Biomed. Previous: NUS)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Hengtong_Li.jpg" class="circular-image low-res">
+                                                         <p>Hengtong Li (PhD candidate. Co-adv. with Ching-Yu Cheng. Biomed. Previous: NUS)</p>
+                                                     </div>
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/hongyuHe.jpeg" class="circular-image low-res">
                                                         <p>Hongyu He (PhD candidate.Automatic Discovery Engine, Creativity. Previous: Duke U., USA.)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=bZbSkEAAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://hongyu-he.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Jing_Yu_Lim.jpeg" class="circular-image low-res">
                                                         <p>Jing Yu Lim (PhD candidate co-adv. with Tze Yun Leong. World model, RL. Previous: NUS, Singapore)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=MDA9DLoAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://jing-yu-lim.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Karaka_Prasanth_Naidu.jpeg" class="circular-image low-res">
-                                                        <p>Karaka Prasanth Naidu(Intern. Creativity. From IIT Dhanbad,India)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Karaka_Prasanth_Naidu.jpeg" class="circular-image low-res">
+                                                         <p>Karaka Prasanth Naidu(Intern. Creativity. From IIT Dhanbad,India)</p>
+                                                     </div>
 
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Zhu_He.jpeg" class="circular-image low-res">
-                                                        <p>Mike Zhu(PhD candidate at McGill U, Canada, co-adv. with Yue Li. Biomed)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Zhu_He.jpeg" class="circular-image low-res">
+                                                         <p>Mike Zhu(PhD candidate at McGill U, Canada, co-adv. with Yue Li. Biomed)</p>
+                                                     </div>
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Zhang Peisong.jpeg" class="circular-image low-res">
                                                         <p>Peisong Zhang (master student at NUS. Biomed)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=zh-CN&user=ZVHfMXYAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://peisong-zhang.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Qiran_zou.png" class="circular-image low-res">
                                                         <p>Qiran Zou (PhD candicate co-adv. with Dean Ho. Automatic Evolution Engine.Previous: Tsinghua U, China)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?user=bd0eAMwAAAAJ&hl=en&oi=ao" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://qrzou.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/QifeiWang.jpeg" class="circular-image low-res">
-                                                        <p>Qifei Wang (Visiting scholar from Chinese Academy of Sciences)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/QifeiWang.jpeg" class="circular-image low-res">
+                                                         <p>Qifei Wang (Visiting scholar from Chinese Academy of Sciences)</p>
+                                                     </div>
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/RushiShah.jpeg" class="circular-image low-res">
                                                         <p>Rushi Shah (PhD candidate. Creativity. From IIT, Jodhpur, India.)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=Vc42kxUAAAAJ&view_op=list_works&gmla=ALUCkoXO1bSwxR5sHwzHjE6QB5slaDRPBCFVvy4enFkAhW6gST_v21AtpeY7tZvERRfR8AXWMlx5t00cK9g7CfX" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://shahrushi2003.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Samson Yu Bai Jian.jpg" class="circular-image low-res">
                                                         <p>Samson Yu Bai Jian (PhD candidate co-adv. with Helen Zhou. Creativity. Previous: NUS)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?user=pYb0xhAAAAAJ&hl=en" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://samsonyubaijian.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Shaowen_Wang.jpg" class="circular-image low-res">
+                                                         <p>Shaowen Wang (Intern. From Shanghai Jiao Tong U, China.)</p>
+                                                     </div>
+
+                                                    <div class="team-member-card postdoc">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Srinivas_Anumasa.jpeg" class="circular-image low-res">
                                                         <p>Srinivas Anumasa (Postdoc researcher. Creativity, Diffusion .Previous: IIT Hyderabad, India. )</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?user=SvyaMykAAAAJ&hl=en" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Terence_Nguang_Yi_Jie.jpg" class="circular-image low-res">
-                                                        <p>Terence Nguang Yi Jie (Intern. Creativity.From Singapore army)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Terence_Nguang_Yi_Jie.jpg" class="circular-image low-res">
+                                                         <p>Terence Nguang Yi Jie (Intern. Creativity.From Singapore army)</p>
+                                                     </div>
 
                                                     
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Ting_Xu.jpg" class="circular-image low-res">
-                                                        <p>Ting Xu (Postdoc, co-adv. with Ching-Yu Cheng. Biomed .Previous: USTC,China)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Ting_Xu.jpg" class="circular-image low-res">
+                                                         <p>Ting Xu (Postdoc, co-adv. with Ching-Yu Cheng. Biomed .Previous: USTC,China)</p>
+                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Tingting_Chen.jpg" class="circular-image low-res">
                                                         <p>Tingting Chen (PhD candidate co-adv. with Ching-Yu Cheng. Automatic Evolution/Discovery Engine.Previous: UNSW,Australia.)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=v6rq6UsAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/wenhaozhao.jpeg" class="circular-image low-res">
                                                         <p>Wenhao Zhao (PhD candidate. Creatvity, MLLM .Previous: Beihang U,China )</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?user=rNPkeu4AAAAJ&hl=zh-CN&authuser=2" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Xuming_Ran.jpeg" class="circular-image low-res">
                                                         <p>Xuming Ran (PhD candidate co-adv. with Ching-Yu Cheng.Memory,Continual learning.Previous:Chongqing Jiaotong Uni, China)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://your-personal-website.com" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Yiming_tang.jpeg" class="circular-image low-res">
                                                         <p>Yiming Tang(PhD candidate,MLLM, Previous: Peking U, China.)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=zh-CN&user=0WYAYQ8AAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Yingtao_Zhu.jpg" class="circular-image low-res">
-                                                        <p>Yingtao Zhu (Clinical MBBS student Joint Tsinghua-NUS. Creativity, biomed)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Yingtao_Zhu.jpg" class="circular-image low-res">
+                                                         <p>Yingtao Zhu (Clinical MBBS student Joint Tsinghua-NUS. Creativity, biomed)</p>
+                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Yudi_Wu.jpg" class="circular-image low-res">
+                                                         <p>Yudi Wu (Intern. Creativity. From Zhejiang U, China.)</p>
+                                                     </div>
+
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Yuqian_wang.jpg" class="circular-image low-res">
+                                                         <p>Yuqian Wang (Intern. From  USTC, China.)</p>
+                                                     </div>
+
+
+
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Yuxuan_Wu.jpeg" class="circular-image low-res">
-                                                        <p>Yuxuan Wu (Visiting scholar from Shanghai Maritime U, China.)<br><a href="https://horikitasaku.github.io/en/" target="_blank"><i class="fa fa-link"></i> Personal page</a></p>
+                                                        <p>Yuxuan Wu (Visiting scholar from Shanghai Maritime U, China.)</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=zh-CN&user=mZegjTgAAAAJ" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://horikitasaku.github.io/en/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/ye_zhang.jpeg" class="circular-image low-res">
-                                                        <p>Ye Zhang(Visiting faculty from Tongren Hospital, China. Medicine)</p>
-                                                    </div>
+                                                    <div class="team-member-simple">
+                                                         <img src="images/ye_zhang.jpeg" class="circular-image low-res">
+                                                         <p>Ye Zhang(Visiting faculty from Tongren Hospital, China. Medicine)</p>
+                                                     </div>
 
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
-                                                        <img src="images/Yizhen_Liao.jpg" class="circular-image low-res">
-                                                        <p>Yizhen Liao (PhD candidate. Creativity. From Tsinghua U, China.)</p>
-                                                    </div>
+                                                                                                         <div class="team-member-simple">
+                                                         <img src="images/Yizhen_Liao.jpg" class="circular-image low-res">
+                                                         <p>Yizhen Liao (PhD candidate. Creativity. From Tsinghua U, China.)</p>
+                                                     </div>
 
-                                                   
-
-                                                    <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
+                                                    
+                                                    <div class="team-member-card phd-candidate">
+                                                        <div class="link-indicator">
+                                                            <i class="fa fa-link"></i>
+                                                        </div>
                                                         <img src="images/Zarif_Ikram.jpg" class="circular-image low-res">
                                                         <p>Zarif Ikram （Visiting scholar. World model,RL .From Bangladesh University of Engineering and Technology. )</p>
+                                                        <div class="team-member-links">
+                                                            <a href="https://scholar.google.com/citations?hl=en&user=_x0dj7sAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
+                                                                <i class="ai ai-google-scholar"></i>Google Scholar
+                                                            </a>
+                                                            <a href="https://zarifikram.github.io/" target="_blank">
+                                                                <i class="fa fa-globe"></i>Personal Page
+                                                            </a>
+                                                        </div>
                                                     </div>
                                         
 
@@ -663,13 +1040,13 @@
 
                                                     <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
                                                         <img src="images/jiaweiwu.jpeg" class="circular-image low-res">
-                                                        <p>Jiawei Wu (Intern, from Huadong Normal Uni.,China.  ), Next:</p>
+                                                        <p>Jiawei Wu (Intern, from Huadong Normal Uni.,China.  ), Next: Rutgers CS PhD </p>
                                                     </div>
 
 
                                                     <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
                                                         <img src="images/mingyuanyan.jpeg" class="circular-image low-res">
-                                                        <p>Mingyuan Yan (Graduate research asistant. From Huadong Normal Uni.,China. ), Next:</p>
+                                                        <p>Mingyuan Yan (Graduate research asistant. From Huadong Normal Uni.,China. ), Next: NYU ECE PhD</p>
                                                     </div>
                                                     
                                                     <div style="display: inline-block; text-align: center; width: 30%; margin: 1%;">
