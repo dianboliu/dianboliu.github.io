@@ -1,0 +1,100 @@
+---
+permalink: /team/
+title: "Team"
+author_profile: true
+---
+
+<style>
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.team-card {
+  width: 200px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-card h4 {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.team-card .position {
+  color: #666;
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+
+.team-card .affiliation {
+  color: #888;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.team-card .links a {
+  margin: 0 5px;
+  color: #2f7f93;
+  text-decoration: none;
+}
+
+.team-card .links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    width: 100%;
+  }
+}
+</style>
+
+<p>Our team brings together researchers from diverse backgrounds in machine learning, biomedical sciences, and engineering.</p>
+
+<div class="team-grid">
+  {% assign sorted_team = site.team | sort: "title" %}
+  {% for member in sorted_team %}
+  <div class="team-card">
+    <a href="{{ member.url }}">
+      <img src="{{ member.photo | relative_url }}" alt="{{ member.title }}">
+    </a>
+    <h4><a href="{{ member.url }}">{{ member.title }}</a></h4>
+    <div class="position">{{ member.position }}</div>
+    <div class="links">
+      {% if member.google_scholar %}<a href="{{ member.google_scholar }}" target="_blank">Scholar</a>{% endif %}
+      {% if member.personal_page %}<a href="{{ member.personal_page }}" target="_blank">Page</a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<hr style="margin-top: 40px;">
+
+<p style="text-align: center; margin-top: 20px;">
+  <a href="/join/">Interested in joining our team?</a>
+</p>

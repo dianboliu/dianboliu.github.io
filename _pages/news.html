@@ -1,0 +1,65 @@
+---
+permalink: /news/
+title: "News"
+author_profile: true
+---
+
+<style>
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.news-content {
+  margin: 0;
+}
+
+.news-content a {
+  color: #2f7f93;
+}
+
+.news-year {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2f7f93;
+}
+</style>
+
+<p>Latest updates from the Artificial Scientific Intelligence Lab team.</p>
+
+{% assign news_by_year = site.news | group_by_exp: "item", "item.date | date: '%Y'" | sort: "name" | reverse %}
+
+{% for year in news_by_year %}
+<h2 class="news-year">{{ year.name }}</h2>
+<ul class="news-list">
+  {% assign sorted_news = year.items | sort: "date" | reverse %}
+  {% for item in sorted_news %}
+  <li class="news-item">
+    <div class="news-date">{{ item.date | date: "%B %Y" }}</div>
+    <p class="news-content">
+      {{ item.content | strip_html }}
+      {% if item.link and item.link != "" %}
+        <a href="{{ item.link }}" target="_blank">[Link]</a>
+      {% endif %}
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
