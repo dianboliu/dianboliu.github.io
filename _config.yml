@@ -13,7 +13,7 @@ title                    : "Artificial Scientific Intelligence Lab"
 title_separator          : "-"
 name                     : &name "Artificial Scientific Intelligence Lab"
 description              : &description "Artificial Scientific Intelligence Lab research group at National University of Singapore - developing AI systems for autonomous learning, creativity, and scientific discovery"
-url                      : https://www.cogai4sci.com
+url                      : https://www.asintelligence.xyz
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "dianboliu/dianboliu.github.io"
 
