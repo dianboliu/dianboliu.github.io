@@ -11,9 +11,8 @@ redirect_from:
 
 Our team develops fundamental machine learning methods that enable AI systems to autonomously conduct scientific research.
 
-We are based at the **National University of Singapore** and led by **Dr. Dianbo Liu**.
+We are based at the **National University of Singapore** and led by **Dr. Dianbo Liu**.Our team was previously called "CogAI4Sci" Team 
 
-Our team was previously called "CogAI4Sci" Team 
 ---
 
 ## Research Focus: The Three A's
