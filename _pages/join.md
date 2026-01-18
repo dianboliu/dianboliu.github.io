@@ -7,51 +7,18 @@ author_profile: true
 We are always looking for talented and motivated researchers to join our team!
 
 ---
+The Artificial Scientific Intelligence Lab (ASI Lab) at the National University of Singapore is recruiting
 
-## Open Positions
+1)  Research Interns / Visiting Scholars starting in early 2026
+2)  PhD Candidates (Jan 2027 intake). 
 
-### Postdoctoral Researchers
-We are seeking **two postdoctoral researchers** for AI for Science (biomedical) research. Candidates should have a strong background in machine learning and interest in biomedical applications.
+Directions: either machine learning for science or fundamental machine learning
 
-### PhD Students
-- **Multiple fully funded positions** for fundamental machine learning research
-- **One fully funded position** for AI for Science (biomedical) research
 
-### Research Interns & Visiting Scholars
-We welcome applications from research interns and visiting scholars who are passionate about AI research.
 
----
+If you are interested, please fill in this form: https://forms.gle/e8Az4yYjZSJdGhfF9
 
-## Our Research Style
-
-> **Curiosity- and long-term-impact-driven.**
-
-Team members are self-motivated and like to think big. We are extremely open to different ideas, and team members have a high degree of freedom to explore their interests while we maintain very high research-quality standards.
-
----
-
-## What We Look For
-
-- Strong mathematical and programming skills
-- Passion for AI research and scientific discovery
-- Self-motivation and ability to work independently
-- Collaborative spirit and good communication skills
-- Prior research experience (publications are a plus but not required for all positions)
-
----
-
-## How to Apply
-
-If you are interested in joining our team, please fill out our application form:
-
-**[Application Form](https://forms.gle/Fbb4npebdKhD1yQe9)**
-
-Please include:
-1. Your CV/Resume
-2. A brief statement of research interests
-3. Representative publications or projects (if applicable)
-4. Contact information for references
-
+AND send me an email at: dianbo at nus dot edu dot sg
 ---
 
 ## Contact
