@@ -7,7 +7,7 @@ category: "phd"
 photo: /images/Yiming_tang.jpeg
 affiliation: "Previous: Peking University, China"
 google_scholar: "https://scholar.google.com/citations?hl=zh-CN&user=0WYAYQ8AAAAJ"
-personal_page: ""
+personal_page: "https://realyimingtangible.github.io/"
 ---
 
 PhD candidate at Artificial Scientific Intelligence Lab.

@@ -6,7 +6,7 @@ position: "PhD Candidate"
 category: "phd"
 photo: /images/hongyuHe.jpeg
 affiliation: "Previous: Duke University, USA"
-google_scholar: "https://scholar.google.com/citations?hl=en&user=bZbSkEAAAAAJ"
+google_scholar: "https://scholar.google.com/citations?user=anDp3o0AAAAJ&hl=en"
 personal_page: "https://hongyu-he.github.io/"
 ---
 
