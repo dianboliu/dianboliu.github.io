@@ -15,18 +15,21 @@ We are based at the **National University of Singapore** and led by **Dr. Dianbo
 
 ---
 
-## Research Focus: The Three A's
+## Research Focus: 
 
-Our research is organized around three core themes:
+Our research is organized around two core themes:
 
-### Automatic AI Evolution Engine
-AI for AI that improves AI. We develop machine learning models that autonomously plan and conduct interactions with environments and data to learn from experience. Our focus includes post-training LLMs and memories of agentic systems for learning from experience rather than relying solely on human data.
 
-### Automatic AI Creativity Engine
-We work to enhance the creativity of generative machine learning models, enabling them to propose novel content. Our focus areas include post-training LLMs and fundamental mechanisms of diffusion models.
+**AI for AI that improves AI.**
 
-### Automatic AI Discovery Engine for Biomedical Sciences
-We use self-evolving AI with improved creativity to help make new discoveries in biomedical sciences.
+We develop AI methods that autonomously develops and improves AI models. Our research focuses on:
+
+
+
+**AI-driven scientific discovery.**
+
+We leverage self-evolving AI with improved creativity to accelerate discoveries in biomedical sciences. 
+
 
 ---
 
