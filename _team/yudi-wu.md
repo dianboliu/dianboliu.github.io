@@ -3,9 +3,10 @@ title: "Yudi Wu"
 collection: team
 permalink: /team/yudi-wu
 position: "Research Intern"
-category: "intern"
+category: "alumni"
+order: 7
 photo: /images/Yudi_Wu.jpg
-affiliation: "Zhejiang University, China"
+affiliation: "Previous: Zhejiang University, China"
 google_scholar: ""
 personal_page: ""
 ---

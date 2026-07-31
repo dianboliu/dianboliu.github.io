@@ -2,10 +2,10 @@
 title: "Nitin Vetcha"
 collection: team
 permalink: /team/nitin-vetcha
-position: "Research Intern"
-category: "intern"
+position: "PhD Student"
+category: "phd"
 photo: /images/Nitin_Vetcha.jpeg
-affiliation: "Indian Institute of Science"
+affiliation: "Previous: Indian Institute of Science"
 google_scholar: ""
 personal_page: ""
 ---

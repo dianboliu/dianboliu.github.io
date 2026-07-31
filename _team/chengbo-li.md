@@ -4,6 +4,7 @@ collection: team
 permalink: /team/chengbo-li
 position: "Intern"
 category: "alumni"
+order: 26
 photo: /images/chengbo_li.jpeg
 affiliation: "Previous: UIUC, USA. Next: Yale University"
 google_scholar: ""

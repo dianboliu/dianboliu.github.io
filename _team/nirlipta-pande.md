@@ -4,6 +4,7 @@ collection: team
 permalink: /team/nirlipta-pande
 position: "Intern"
 category: "alumni"
+order: 17
 photo: /images/Nirlipta_Pande.jpeg
 affiliation: "Previous: BITS Pilani, India. Next: PhD in Europe"
 google_scholar: ""

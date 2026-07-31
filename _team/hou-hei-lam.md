@@ -3,9 +3,10 @@ title: "Hou Hei Lam"
 collection: team
 permalink: /team/hou-hei-lam
 position: "Research Intern"
-category: "intern"
+category: "alumni"
+order: 3
 photo: /images/hou_hei_lam.png
-affiliation: "Tsinghua University, China"
+affiliation: "Previous: Tsinghua University, China"
 google_scholar: ""
 personal_page: ""
 ---

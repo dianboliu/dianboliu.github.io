@@ -4,6 +4,7 @@ collection: team
 permalink: /team/jiani-li
 position: "Intern"
 category: "alumni"
+order: 15
 photo: /images/Jiani_li.jpg
 affiliation: "Previous: NUS, Singapore. Next: back to NUS"
 google_scholar: ""

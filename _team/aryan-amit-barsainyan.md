@@ -4,6 +4,7 @@ collection: team
 permalink: /team/aryan-amit-barsainyan
 position: "Intern"
 category: "alumni"
+order: 30
 photo: /images/Aryan_Amit_Barsainyan.jpg
 affiliation: "Previous: NITK, India. Next: back to NITK"
 google_scholar: ""

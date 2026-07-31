@@ -25,7 +25,7 @@ author:
   avatar           : "DianboLiu.jpeg"
   name             : "Leo Dianbo Liu (刘钿渤)"
   pronouns         : # example: "she/her"
-  bio              : "Developing fundamental ML for autonomous scientific research"
+  bio              : "Developing fundamental machine learning to enable AI to conduct autonomous research"
   location         : "Singapore"
   employer         : "National University of Singapore"
   uri              : # Website URL
@@ -85,10 +85,10 @@ author:
 publication_category:
   books:
     title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
-    title: 'Conference Papers'
+    title: 'Selected Conference Papers'
+  manuscripts:
+    title: 'Selected Journal Articles'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews

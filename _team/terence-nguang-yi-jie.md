@@ -4,6 +4,7 @@ collection: team
 permalink: /team/terence-nguang-yi-jie
 position: "Intern"
 category: "alumni"
+order: 19
 photo: /images/Terence_Nguang_Yi_Jie.jpg
 affiliation: "Previous: Singapore Army. Next: undergraduate studies at NUS"
 google_scholar: ""

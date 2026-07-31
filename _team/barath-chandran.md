@@ -3,9 +3,10 @@ title: "Barath Chandran"
 collection: team
 permalink: /team/barath-chandran
 position: "Research Intern"
-category: "intern"
+category: "alumni"
+order: 2
 photo: /images/Barath_Chandran.png
-affiliation: "IIT Roorkee, India"
+affiliation: "Previous: IIT Roorkee, India"
 google_scholar: ""
 personal_page: ""
 ---

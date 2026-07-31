@@ -2,10 +2,10 @@
 title: "Yingtao Zhu"
 collection: team
 permalink: /team/yingtao-zhu
-position: "Clinical MBBS Student"
-category: "intern"
+position: "MD-PhD Student"
+category: "phd"
 photo: /images/Yingtao_Zhu.jpg
-affiliation: "Joint Tsinghua-NUS Program"
+affiliation: "Joint NUS-Tsinghua MD-PhD Program. Previous: Tsinghua University, China"
 google_scholar: ""
 personal_page: ""
 ---

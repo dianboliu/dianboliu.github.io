@@ -4,6 +4,7 @@ collection: team
 permalink: /team/ruobin-tao
 position: "Mentee"
 category: "alumni"
+order: 55
 photo: /images/Ruobin_Tao.jpeg
 affiliation: "Previous: Boston. Now: University of New South Wales, Australia"
 google_scholar: ""

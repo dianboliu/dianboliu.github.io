@@ -4,6 +4,7 @@ collection: team
 permalink: /team/leyu-dai
 position: "Mentee"
 category: "alumni"
+order: 58
 photo: /images/leyu_dai.jpeg
 affiliation: "Previous: Harvard. Next: PhD at the University of North Carolina at Chapel Hill"
 google_scholar: ""

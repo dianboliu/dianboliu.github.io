@@ -4,6 +4,7 @@ collection: team
 permalink: /team/abhinav-sharma
 position: "Intern"
 category: "alumni"
+order: 36
 photo: /images/Abhinav_Sharma.jpg
 affiliation: "Previous: IIIT Guwahati, India. Next: UMass, USA"
 google_scholar: ""

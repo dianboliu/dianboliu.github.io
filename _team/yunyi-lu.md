@@ -3,9 +3,10 @@ title: "Yunyi Lu"
 collection: team
 permalink: /team/yunyi-lu
 position: "Clinical Intern"
-category: "intern"
+category: "alumni"
+order: 9
 photo: /images/Yunyi_Lu.jpg
-affiliation: "Jilin University, China"
+affiliation: "Previous: Jilin University, China. Next: PhD at NUS"
 google_scholar: ""
 personal_page: ""
 ---

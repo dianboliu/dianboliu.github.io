@@ -4,37 +4,8 @@ title: "Research"
 author_profile: true
 ---
 
-Our research focuses on developing machine learning methods that enable AI systems to autonomously interact with the world, learn generalizable rules from experience, and drive automatic self-evolution and scientific discovery in efficient ways.
+Our team focuses on the following three themes of research:
 
----
-
-
-
-**AI for AI that improves AI.**
-
-We develop AI methods that autonomously develops and improves AI models. Our research focuses on:
-
-
-
-**AI-driven scientific discovery.**
-
-We leverage self-evolving AI with improved creativity to accelerate discoveries in biomedical sciences. 
-
----
-
-## Research Themes
-
-Our work spans fundamental machine learning research and applications in biomedical sciences:
-
-**Fundamental ML:**
-- Discrete neural communication
-- Generative flow networks (GFlowNets)
-- Multi-agent reinforcement learning
-- Federated learning
-- Continual learning
-
-**Biomedical Applications:**
-- Electronic health records analysis
-- Medical imaging
-- Genomic data integration
-- Drug discovery and development
+1. **Autoresearch:** Enable AI to conduct autoresearch that improves AI itself.
+2. **AI as science:** Treat AI as a scientific subject to systematically understand the fundamentals of AI.
+3. **AI as co-scientist:** Develop AI to work with humans in biomedical science development.

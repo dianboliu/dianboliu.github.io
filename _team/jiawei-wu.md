@@ -4,6 +4,7 @@ collection: team
 permalink: /team/jiawei-wu
 position: "Intern"
 category: "alumni"
+order: 32
 photo: /images/jiaweiwu.jpeg
 affiliation: "Previous: Huadong Normal University, China. Next: Rutgers CS PhD"
 google_scholar: ""

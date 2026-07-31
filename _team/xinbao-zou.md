@@ -3,9 +3,10 @@ title: "Xinbao Zou"
 collection: team
 permalink: /team/xinbao-zou
 position: "Research Intern"
-category: "intern"
+category: "alumni"
+order: 6
 photo: /images/XinbaoZou.jpg
-affiliation: "Guangdong University of Foreign Studies, China"
+affiliation: "Previous: Guangdong University of Foreign Studies, China"
 google_scholar: ""
 personal_page: ""
 ---

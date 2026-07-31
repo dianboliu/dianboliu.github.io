@@ -4,6 +4,7 @@ collection: team
 permalink: /team/xiaoye-wang
 position: "Intern"
 category: "alumni"
+order: 34
 photo: /images/Xiaoye_Wang.jpeg
 affiliation: "Previous: Harbin Institute of Technology, China. Next: Cambridge University"
 google_scholar: ""

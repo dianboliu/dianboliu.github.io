@@ -76,9 +76,26 @@ author_profile: true
 
 <p>Our team brings together researchers from diverse backgrounds in machine learning, biomedical sciences, and engineering.</p>
 
+<h2 style="text-align: center;">Team Life</h2>
+
+<div style="text-align: center;">
+  <img src="{{ '/images/team photo.jpg' | relative_url }}" alt="Team photo" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/bbq11.jpg' | relative_url }}" alt="Team BBQ" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/team bbq.jpg' | relative_url }}" alt="Team BBQ" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/bbq1.jpg' | relative_url }}" alt="Team BBQ" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/climbing.jpg' | relative_url }}" alt="Team climbing" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/fire.jpg' | relative_url }}" alt="Team campfire" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/chef.jpg' | relative_url }}" alt="Team cooking" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+  <img src="{{ '/images/steak.jpg' | relative_url }}" alt="Team dinner" style="width: 85%; max-width: 800px; margin: 10px auto; border-radius: 8px;">
+</div>
+
+<hr style="margin-top: 40px;">
+
+<h2 style="text-align: center;">Current Team</h2>
+
 {% assign sorted_team = site.team | sort: "title" %}
 {% assign current_members = sorted_team | where_exp: "member", "member.category != 'alumni'" %}
-{% assign alumni_members = sorted_team | where_exp: "member", "member.category == 'alumni'" %}
+{% assign alumni_members = site.team | where_exp: "member", "member.category == 'alumni'" | sort: "order" %}
 
 <div class="team-grid">
   {% for member in current_members %}
@@ -88,6 +105,7 @@ author_profile: true
     </a>
     <h4><a href="{{ member.url }}">{{ member.title }}</a></h4>
     <div class="position">{{ member.position }}</div>
+    <div class="affiliation">{{ member.affiliation }}</div>
     <div class="links">
       {% if member.google_scholar %}<a href="{{ member.google_scholar }}" target="_blank">Scholar</a>{% endif %}
       {% if member.personal_page %}<a href="{{ member.personal_page }}" target="_blank">Page</a>{% endif %}
